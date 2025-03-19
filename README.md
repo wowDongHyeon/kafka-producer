@@ -13,37 +13,10 @@
 
 1. **저장소 클론**
    ```bash
-   git clone <repository-url>
-   cd <repository-directory>
+   git clone https://github.com/wowDongHyeon/kafka-consumer.git
    ```
 
-2. **Docker Compose를 사용하여 Kafka 및 Zookeeper 시작**
-   - 다음 내용을 포함하여 `docker-compose.yml` 파일을 생성합니다:
-     ```yaml
-     version: '3.8'
-     services:
-       zookeeper:
-         image: wurstmeister/zookeeper:3.4.6
-         ports:
-           - "2181:2181"
-
-       kafka:
-         image: wurstmeister/kafka:2.13-2.7.0
-         ports:
-           - "9092:9092"
-         environment:
-           KAFKA_ADVERTISED_LISTENERS: INSIDE://kafka:9092,OUTSIDE://localhost:9092
-           KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: INSIDE:PLAINTEXT,OUTSIDE:PLAINTEXT
-           KAFKA_LISTENERS: INSIDE://0.0.0.0:9092,OUTSIDE://0.0.0.0:9093
-           KAFKA_INTER_BROKER_LISTENER_NAME: INSIDE
-           KAFKA_ZOOKEEPER_CONNECT: zookeeper:2181
-         volumes:
-           - /var/run/docker.sock:/var/run/docker.sock
-     ```
-   - 다음 명령어를 실행하여 서비스를 시작합니다:
-     ```bash
-     docker-compose up -d
-     ```
+2. kafka-docker  repo 참고
 
 3. **MongoDB 구성**
    - MongoDB가 기본 포트(27017)에서 로컬로 실행 중인지 확인합니다.
@@ -66,6 +39,14 @@
   ```
 
 - MongoDB에서 메시지가 `logs` 컬렉션에 기록되었는지 확인합니다.
+
+##데모 캡처본
+
+
+![curl 요청](https://github.com/user-attachments/assets/288d41de-5dab-4081-8f1e-841e25946ba9)
+![image](https://github.com/user-attachments/assets/4b3e8bb3-5ee0-4d94-b6b8-f84caa8eaf8e)
+
+
 
 ## 라이선스
 
