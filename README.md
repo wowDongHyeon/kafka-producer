@@ -16,12 +16,15 @@
    git clone https://github.com/wowDongHyeon/kafka-consumer.git
    ```
 
-2. kafka-docker  repo 참고
+2. kafka-docker의 readme 참고
+   https://github.com/wowDongHyeon/kafka-broker
 
-3. **MongoDB 구성**
+   - kafka-docker가 기본 포트(9092)에서 로컬로 실행 중인지 확인합니다.
+
+4. **MongoDB 구성**
    - MongoDB가 기본 포트(27017)에서 로컬로 실행 중인지 확인합니다.
 
-4. **애플리케이션 속성 구성**
+5. **애플리케이션 속성 구성**
    - 필요에 따라 `src/main/resources/application.properties` 파일에서 MongoDB URI 및 Kafka 설정을 업데이트합니다.
 
 ## 애플리케이션 실행
